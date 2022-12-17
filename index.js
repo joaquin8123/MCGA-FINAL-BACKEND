@@ -14,7 +14,7 @@ const app = express();
 
 /* Connect to MongoDB */
 mongoose
-    .connect('mongodb+srv://joaquin:joaquin@clustermcga2022.bmq6g6d.mongodb.net/?retryWrites=true&w=majority')
+    .connect(process.env.DATABASE_URL)
     .then(() => console.log(`DATABASE [Online] => Name: clustermcga2022`))
     .catch((error) => console.log(`ERROR: ${error.message}`));
 
@@ -52,4 +52,4 @@ app.use((req, res, next) => {
 
 /* Create the server */
 const httpServer = http.createServer(app);
-httpServer.listen(5000, () => console.log(`API [Online] => Running on port: ${5000}`));
+httpServer.listen(process.env.PORT, () => console.log(`API [Online] => Running on port: ${process.env.PORT}`));
