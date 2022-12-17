@@ -8,6 +8,7 @@ const cors = require('cors')
 const productRoutes = require('./src/routes/products');
 const supplierRoutes = require('./src/routes/supplier');
 const authRoutes = require('./src/routes/auth');
+const publicRoutes = require('./src/routes/public');
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use(cors());
 app.use('/product', productRoutes);
 app.use('/supplier', supplierRoutes);
 app.use('/auth', authRoutes);
+app.use('/public', publicRoutes);
 
 /* Error handling */
 app.use((req, res, next) => {
@@ -50,4 +52,4 @@ app.use((req, res, next) => {
 
 /* Create the server */
 const httpServer = http.createServer(app);
-httpServer.listen(4000, () => console.log(`API [Online] => Running on port: ${4000}`));
+httpServer.listen(5000, () => console.log(`API [Online] => Running on port: ${5000}`));
