@@ -20,4 +20,4 @@
 | DeleteProduct       | `/product/:id` | DELETE         | - 
 | Register       | `/auth/register` | POST         | `{user: "joaquin", password: "argentinacampeon2022"}` 
 | Login       | `auth/login` | POST         | `{user: "joaquin", password: "argentinacampeon2022"}`
-| 
+
